@@ -1,26 +1,49 @@
 import React, { Component } from 'react';
-import s from './Feedback.module.css';
+import PropTypes from 'prop-types'
 
-export default class Feedback extends Component {
+class Feedback extends Component {
+    countClick = keys => {
+        this.setState(prev => ({ [keys]: prev[keys] + 1 }));
+    }
+
     render() {
-        const state = this.props.state;
-        const id = Object.keys(state)
+        const { good, neutral, bad } = this.props.state;
+        const keys = this.props.keys;
+
+        console.log(this);
         console.log(this.props);
+        // console.log(state);
+        // console.log(good);
+        // console.log(neutral);
+        // console.log(bad);
+
         return (
             <div>
                 <div>Please leave feedback</div>
                 <div>
-                    <button id={id[0]}>Good</button>
-                    <button id={id[1]}>Neutral</button>
-                    <button id={id[2]}>Bad</button>
+                    {keys.map(item => (
+                        <button
+                            key={item}
+                            type="button"
+                            onClick={this.countClick}
+                        >
+                            {item}
+                        </button>
+                    ))}
                 </div>
                 <div>Statistics</div>
                 <ul>
-                    <li id={id[0]}>Good: {state.good}</li>
-                    <li id={id[1]}>Neutral: {state.neutral}</li>
-                    <li id={id[2]}>Bad: {state.bad}</li>
+                    <li>Good: {good}</li>
+                    <li>Neutral: {neutral}</li>
+                    <li>Bad: {bad}</li>
                 </ul>
             </div>
         )
     }
 }
+
+Feedback.propTypes = {
+    state: PropTypes.object.isRequired,
+}
+
+export default Feedback

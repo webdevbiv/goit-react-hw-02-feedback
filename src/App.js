@@ -9,17 +9,16 @@ class App extends Component {
     bad: 0
   }
   render() {
-
     const state = this.state;
-    console.log(Object.keys(state));
-    // const { state } = this.state
-    // console.log(state);
-    // console.log(this.state);
+    const rateSelection = Object.keys(state)
+    console.log(rateSelection);
+
     return (
       <div className="App" >
         <header className="App-header">
           <Feedback
             state={state}
+            keys={rateSelection}
           />
         </header>
       </div>
