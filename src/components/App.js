@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Feedback from './components/Feedback/Feedback';
+import Feedback from './Feedback/Feedback';
 import './App.css';
 
 class App extends Component {
@@ -9,10 +9,9 @@ class App extends Component {
     bad: 0
   }
   render() {
-    const { good, neutral, bad } = this.state;
+    // const { good, neutral, bad } = this.state;
     const state = this.state;
     const rateSelection = Object.keys(state)
-    // console.log(rateSelection);
 
     return (
       <div className="App" >

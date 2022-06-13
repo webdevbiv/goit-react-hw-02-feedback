@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 
 class Feedback extends Component {
-    countClick = (e) => {
+    countClick = () => {
+        console.log();
 
     }
 
@@ -17,14 +18,14 @@ class Feedback extends Component {
         // console.log(bad);
 
         return (
-            < div >
+            <div >
                 <div>Please leave feedback</div>
                 <div>
                     {keys.map(item => (
                         <button
                             key={item}
                             type="button"
-                            onClick={this.countClick()}
+                            onClick={this.countClick}
                         >
                             {item}
                         </button>
@@ -36,7 +37,7 @@ class Feedback extends Component {
                     <li>Neutral: {state.neutral}</li>
                     <li>Bad: {state.bad}</li>
                 </ul>
-            </ div>
+            </ div >
         )
     }
 }
