@@ -9,9 +9,10 @@ class App extends Component {
     bad: 0
   }
   render() {
+    const { good, neutral, bad } = this.state;
     const state = this.state;
     const rateSelection = Object.keys(state)
-    console.log(rateSelection);
+    // console.log(rateSelection);
 
     return (
       <div className="App" >

@@ -2,30 +2,29 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 
 class Feedback extends Component {
-    countClick = keys => {
-        this.setState(prev => ({ [keys]: prev[keys] + 1 }));
+    countClick = (e) => {
+
     }
 
     render() {
-        const { good, neutral, bad } = this.props.state;
-        const keys = this.props.keys;
+        const { state, keys } = this.props;
 
-        console.log(this);
-        console.log(this.props);
         // console.log(state);
+        // console.log(this.props);
+        // console.log(keys);
         // console.log(good);
         // console.log(neutral);
         // console.log(bad);
 
         return (
-            <div>
+            < div >
                 <div>Please leave feedback</div>
                 <div>
                     {keys.map(item => (
                         <button
                             key={item}
                             type="button"
-                            onClick={this.countClick}
+                            onClick={this.countClick()}
                         >
                             {item}
                         </button>
@@ -33,11 +32,11 @@ class Feedback extends Component {
                 </div>
                 <div>Statistics</div>
                 <ul>
-                    <li>Good: {good}</li>
-                    <li>Neutral: {neutral}</li>
-                    <li>Bad: {bad}</li>
+                    <li>Good: {state.good}</li>
+                    <li>Neutral: {state.neutral}</li>
+                    <li>Bad: {state.bad}</li>
                 </ul>
-            </div>
+            </ div>
         )
     }
 }
