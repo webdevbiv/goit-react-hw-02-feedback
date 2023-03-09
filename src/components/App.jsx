@@ -13,17 +13,22 @@ export default class App extends Component {
   }
 
   handleClick = (e) => {
-    // console.log(e);
-    // console.log(e.target.id);
+    const key = e.target.id
     this.setState((prev) => ({
-      [e.target.id]: prev.value + 1
+      [key]: prev[key] + 1
     }))
   }
 
   countTotalFeedback = () => {
-    let total = 0;
-    Object.values(this.state).forEach(item => total += item)
+    const { good, neutral, bad } = this.state
+    let total = good + neutral + bad
     return total
+  }
+
+  countPositiveFeedback = () => {
+    let total = this.countTotalFeedback()
+    const { good } = this.state
+    return total > 0 ? Math.round(good / total * 100) : 0
   }
 
   render() {
@@ -39,7 +44,7 @@ export default class App extends Component {
           neutral={neutral}
           bad={bad}
           total={this.countTotalFeedback()}
-        // positivePercentage={ } 
+          positivePercentage={this.countPositiveFeedback()}
         />
         <Section />
       </>
