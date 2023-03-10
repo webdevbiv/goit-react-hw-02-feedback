@@ -1,8 +1,7 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 function FeedbackOptions({ options, onLeaveFeedback }) {
-    // console.log("🚀 ~ options:", options, typeof options)
     return (
         <>
             {Object.keys(options).map((item) => (
@@ -16,6 +15,9 @@ function FeedbackOptions({ options, onLeaveFeedback }) {
     )
 }
 
-// FeedbackOptions.propTypes = { }
+FeedbackOptions.propTypes = {
+    options: PropTypes.objectOf(PropTypes.number),
+    onLeaveFeedback: PropTypes.func.isRequired
+}
 
 export default FeedbackOptions

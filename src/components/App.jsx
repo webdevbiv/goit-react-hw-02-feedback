@@ -1,11 +1,14 @@
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import Section from './Section/Section'
 import Statistics from './Statistics/Statistics'
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions'
 
 export default class App extends Component {
-  // static propTypes = { second: third }
+  // static propTypes = {
+  //   this.state: PropTypes.objectOf(PropTypes.number).isRequired
+  // }
+
   state = {
     good: 0,
     neutral: 0,
