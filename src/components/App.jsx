@@ -35,18 +35,25 @@ export default class App extends Component {
     const { good, neutral, bad } = this.state
     return (
       <>
-        <FeedbackOptions
-          options={this.state}
-          onLeaveFeedback={this.handleClick}
-        />
-        <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={this.countTotalFeedback()}
-          positivePercentage={this.countPositiveFeedback()}
-        />
-        <Section />
+        <Section
+          title="Please Leave Feedback"
+          children={
+            <FeedbackOptions
+              options={this.state}
+              onLeaveFeedback={this.handleClick}
+            />
+          } />
+        <Section
+          title="Statistics"
+          children={
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedback()}
+            />
+          } />
       </>
     )
   }

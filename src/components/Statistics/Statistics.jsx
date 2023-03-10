@@ -8,7 +8,6 @@ function Statistics({ good, neutral, bad, total, positivePercentage }) {
 
     return (
         <>
-            <div>Statistics</div>
             <ul>
                 <li>Good: {good}</li>
                 <li>Neutral: {neutral}</li>
