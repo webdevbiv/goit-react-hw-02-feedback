@@ -5,16 +5,20 @@ function Statistics({ good, neutral, bad, total, positivePercentage }) {
     // console.log("🚀 ~ bad:", bad)
     // console.log("🚀 ~ neutral:", neutral)
     // console.log("🚀 ~ good:", good)
-
+    console.log(total);
     return (
         <>
-            <ul>
-                <li>Good: {good}</li>
-                <li>Neutral: {neutral}</li>
-                <li>Bad: {bad}</li>
-                <li>Total: {total}</li>
-                <li>Positive Percentage: {positivePercentage}%</li>
-            </ul>
+            {total = 0 ?
+                <ul>
+                    <li>Good: {good}</li>
+                    <li>Neutral: {neutral}</li>
+                    <li>Bad: {bad}</li>
+                    <li>Total: {total}</li>
+                    <li>Positive Percentage: {positivePercentage}%</li>
+                </ul>
+                : null
+            }
+
         </>
     )
 }
