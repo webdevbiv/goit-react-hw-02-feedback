@@ -42,10 +42,12 @@ export default class App extends Component {
               options={this.state}
               onLeaveFeedback={this.handleClick}
             />
-          } />
+          }
+        />
         <Section
           title="Statistics"
           children={
+            this.countTotalFeedback() > 0 &&
             <Statistics
               good={good}
               neutral={neutral}
@@ -53,7 +55,8 @@ export default class App extends Component {
               total={this.countTotalFeedback()}
               positivePercentage={this.countPositiveFeedback()}
             />
-          } />
+          }
+        />
       </>
     )
   }
