@@ -11,7 +11,7 @@ function Section({ children, title }) {
 }
 
 Section.propTypes = {
-    children: PropTypes.element.isRequired,
+    childrens: PropTypes.element,
     title: PropTypes.string.isRequired
 }
 

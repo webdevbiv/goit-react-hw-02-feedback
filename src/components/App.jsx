@@ -13,7 +13,9 @@ export default class App extends Component {
 
 
   handleClick = (e) => {
-    const key = e.target.id
+    console.log(e);
+    const key = e.target.innerHTML
+    console.log(key);
     this.setState((prev) => ({
       [key]: prev[key] + 1
     }))
