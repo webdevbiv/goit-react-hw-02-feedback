@@ -13,9 +13,7 @@ export default class App extends Component {
 
 
   handleClick = (e) => {
-    console.log(e);
     const key = e.target.innerHTML
-    console.log(key);
     this.setState((prev) => ({
       [key]: prev[key] + 1
     }))
